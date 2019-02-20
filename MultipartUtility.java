@@ -50,11 +50,11 @@ public class MultipartUtility {
 
     public void addFilePart(String fieldName, File uploadFile) throws IOException {
         String fileName = uploadFile.getName();
-        
+        byte[] bytes = Files.readAllBytes(uploadFile.toPath());
+
         request.writeBytes(this.twoHyphens + this.boundary + this.crlf);
         request.writeBytes("Content-Disposition: form-data; name=\"file\";filename=\"" + fileName +"\"" + this.crlf);
         request.writeBytes(this.crlf);
-        byte[] bytes = Files.readAllBytes(uploadFile.toPath());
         request.write(bytes);
         request.writeBytes(this.crlf);
 
