@@ -1,10 +1,9 @@
 
 
-#This is the code for transferring files between the server and the server.
+# This is the code for transferring files between the server and the server.
 
 
-
-##Usage
+## Usage
 
 
 	MultipartUtility multipartUtility = new MultipartUtility(URL);
